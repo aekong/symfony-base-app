@@ -10,7 +10,8 @@ class DefaultController {
     * @Route("/")
     */
   public function index() {
-    return new Response('<html><body>this is the index controller</body></html>');
+    phpinfo();
+    return new Response('');
   }
 }
 
