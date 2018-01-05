@@ -11,13 +11,17 @@ services:
     links:
       - php
   php:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile-php
     volumes: 
       - .:/application/code:rw
     links:
       - database
   database:
-    image: postgres:10.1
+    build:
+      context: .
+      dockerfile: Dockerfile-postgres
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
